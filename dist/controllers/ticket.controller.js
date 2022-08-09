@@ -89,7 +89,7 @@ exports.closeTicket = (0, async_1.default)((req, res, next) => __awaiter(void 0,
 //  @access     Private: Admin
 exports.deleteTicket = (0, async_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const { ticketID } = req.body;
-    const deletedTicket = yield Ticket_model_1.default.findOneAndRemove({ ticketID });
+    const deletedTicket = yield Ticket_model_1.default.findOneAndRemove({ _id: ticketID });
     if (!deletedTicket) {
         return next(new ErrorResponse_1.default("no ticket to delete with this id", 400));
     }

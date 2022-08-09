@@ -102,8 +102,8 @@ export const closeTicket = asyncHandler(async (req: Request, res: Response, next
 //  @access     Private: Admin
 export const deleteTicket = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   const { ticketID } = req.body;
-  
-  const deletedTicket = await TicketModel.findOneAndRemove({ ticketID });
+
+  const deletedTicket = await TicketModel.findOneAndRemove({ _id: ticketID });
 
   if (!deletedTicket) {
     return next(new ErrorResponse("no ticket to delete with this id", 400));
