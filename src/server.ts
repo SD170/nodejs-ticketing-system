@@ -7,8 +7,7 @@ import fs from "fs";
 //load env vars
 dotenv.config({path: __dirname+'/../config.env'});
 
-// console.log(__dirname+'/../config.env');
-// console.log(process.env.MONGOPORT);
+
 
 
 const app = express();
