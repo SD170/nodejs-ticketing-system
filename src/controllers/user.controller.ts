@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt, { Secret } from 'jsonwebtoken';
 import UserModel from "../models/User.model";
 import asyncHandler from "../middlewares/async";
+import ErrorResponse from '../utils/ErrorResponse';
 
 
 //  @desc       create single user
@@ -17,7 +18,7 @@ export const createUser = asyncHandler(async (req: Request, res: Response, next:
 
   // checking for TOKEN_SECRET from env
   if (process.env.TOKEN_SECRET === undefined) {
-    next("please provide a secret for jwt")
+    return next(new ErrorResponse("please provide a secret for jwt"))
   }
 
   // saving the created user

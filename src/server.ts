@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from "cors";
 import fs from "fs";
 import connectDB from "./db/connection";
+import errorHandler from './middlewares/error';
 
 //load env vars
 dotenv.config({path: __dirname+'/../config.env'});
@@ -40,6 +41,8 @@ if(process.env.NODE_ENV==='development'){   //only when using dev env
 app.use('/api/v1/users',userRoutres);
 
 
+//error middleware. create a response - should be at last
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
