@@ -15,6 +15,7 @@ connectDB();
 //route files
 import userRoutes from "./routes/user.route";
 import ticketRoutes from "./routes/ticket.route";
+import homeRoutes from "./routes/home.route";
 
 
 const app = express();
@@ -41,6 +42,7 @@ if(process.env.NODE_ENV==='development'){   //only when using dev env
 //mount routers
 app.use('/api/v1/users',userRoutes);
 app.use('/api/v1/tickets',ticketRoutes);
+app.use('/',homeRoutes);
 
 
 //error middleware. create a response - should be at last

@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "ec292bdb-e540-4da1-b6f5-668bfabe6a22",
+		"name": "interim",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10393292"
+	},
+	"item": [
+		{
+			"name": "skrate",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "create: user|admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYyMWI3ZjEwZGM4ODlkNWI1MDk4Y2YiLCJ1c2VybmFtZSI6InVzZXIxIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjYwMDMzOTE5LCJleHAiOjE2OTE1Njk5MTl9.LjaJPMzgTwrrKYb9npab4en3kg5GcgapsxX16wo7YRc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"admin2\",\n    \"role\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/v1/users/new",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"new"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "ticket",
+							"item": [
+								{
+									"name": "get all tickets",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYxZjA0ODFmOTUxMWUyMjMyYzU0MzQiLCJ1c2VybmFtZSI6InVzZXIxIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjYwMDIyODU2LCJleHAiOjE2OTE1NTg4NTZ9.Z9n9DaRFWGZ4CexO2qj_FR3Z5XEPna4CqMTEjy4enP4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:5000/api/v1/tickets/all",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"api",
+												"v1",
+												"tickets",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get all tickets: q",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYxZjA0ODFmOTUxMWUyMjMyYzU0MzQiLCJ1c2VybmFtZSI6InVzZXIxIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjYwMDIyODU2LCJleHAiOjE2OTE1NTg4NTZ9.Z9n9DaRFWGZ4CexO2qj_FR3Z5XEPna4CqMTEjy4enP4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:5000/api/v1/tickets?status=open",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"api",
+												"v1",
+												"tickets"
+											],
+											"query": [
+												{
+													"key": "priority",
+													"value": "high",
+													"description": "[low, medium, high]",
+													"disabled": true
+												},
+												{
+													"key": "status",
+													"value": "open",
+													"description": "[open, close]"
+												},
+												{
+													"key": "title",
+													"value": "any title",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "create a ticket",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYxZjAwYTFmOTUxMWUyMjMyYzU0MzAiLCJ1c2VybmFtZSI6ImFkbWluMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDAyMjc5NCwiZXhwIjoxNjkxNTU4Nzk0fQ.FvhMOtvAMYXJlEMQPiGW5m4bQtgTTCuXJfExtshC8gg",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"new ticket 2\",\n    \"description\": \"bug\",\n    \"assignedTo\": \"user1\",\n    \"priority\":\"high\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5000/api/v1/tickets/new",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"api",
+												"v1",
+												"tickets",
+												"new"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "close a ticket",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYyMWI5YTEwZGM4ODlkNWI1MDk4ZDEiLCJ1c2VybmFtZSI6ImFkbWluMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDAzMzk0NiwiZXhwIjoxNjkxNTY5OTQ2fQ.Jdd-3XyNNwR7iB07hoxAcrindKubmn9IUzZWmhA2jjc",
+												"type": "text",
+												"description": "employee 1"
+											},
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYyMTRkNzk2NDcwY2M3YzkyMWE0NjUiLCJ1c2VybmFtZSI6ImFkbWluMiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDAzMjIxNSwiZXhwIjoxNjkxNTY4MjE1fQ.IciRU_foBUDV0F4T5Pwcb4r6ZFxUEG_QCXnWjJUFtYQ",
+												"description": "admin",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYyMTUzODk2NDcwY2M3YzkyMWE0NmYiLCJ1c2VybmFtZSI6InVzZXIyIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjYwMDMyMzEyLCJleHAiOjE2OTE1NjgzMTJ9.QquJhYEMKBRH07iJXXZqmOL5BlGz0leWRvEeVmyhkMs",
+												"description": "employee 2",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketID\":\"62f21c3910dc889d5b5098e7\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5000/api/v1/tickets/markAsClosed",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"api",
+												"v1",
+												"tickets",
+												"markAsClosed"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete a ticket",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYyMTRkNzk2NDcwY2M3YzkyMWE0NjUiLCJ1c2VybmFtZSI6ImFkbWluMiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2MDAzMjIxNSwiZXhwIjoxNjkxNTY4MjE1fQ.IciRU_foBUDV0F4T5Pwcb4r6ZFxUEG_QCXnWjJUFtYQ",
+												"type": "text",
+												"description": "admin"
+											},
+											{
+												"key": "Authorization",
+												"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmYxZjA0ODFmOTUxMWUyMjMyYzU0MzQiLCJ1c2VybmFtZSI6InVzZXIxIiwicm9sZSI6ImVtcGxveWVlIiwiaWF0IjoxNjYwMDIyODU2LCJleHAiOjE2OTE1NTg4NTZ9.Z9n9DaRFWGZ4CexO2qj_FR3Z5XEPna4CqMTEjy4enP4",
+												"description": "employee",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"ticketID\":\"62f21c3910dc889d5b5098e7\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5000/api/v1/tickets/delete",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"api",
+												"v1",
+												"tickets",
+												"delete"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

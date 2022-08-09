@@ -17,6 +17,7 @@ dotenv_1.default.config({ path: __dirname + '/../config.env' });
 //route files
 const user_route_1 = __importDefault(require("./routes/user.route"));
 const ticket_route_1 = __importDefault(require("./routes/ticket.route"));
+const home_route_1 = __importDefault(require("./routes/home.route"));
 const app = (0, express_1.default)();
 //body parser
 app.use((0, cors_1.default)());
@@ -32,6 +33,7 @@ if (process.env.NODE_ENV === 'development') { //only when using dev env
 //mount routers
 app.use('/api/v1/users', user_route_1.default);
 app.use('/api/v1/tickets', ticket_route_1.default);
+app.use('/', home_route_1.default);
 //error middleware. create a response - should be at last
 app.use(error_1.default);
 const PORT = process.env.PORT || 5000;
