@@ -13,7 +13,7 @@ const TicketSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: ["low", "medium", "high"],
-        default: "open"
+        default: "low"
     },
     priority: {
         type: String,
@@ -23,7 +23,7 @@ const TicketSchema = new mongoose.Schema({
     assignedTo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        required: true,
+        required: [true, "Please add a valid employee as assignedTo"],
     }, 
     createdAt: {
         type: Date,

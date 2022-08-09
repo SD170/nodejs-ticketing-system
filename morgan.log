@@ -25,3 +25,13 @@
 ::1 - - [09/Aug/2022:04:42:07 +0000] "POST /api/v1/users/new HTTP/1.1" 400 57
 ::1 - - [09/Aug/2022:04:53:54 +0000] "POST /api/v1/users/new HTTP/1.1" 400 66
 ::1 - - [09/Aug/2022:04:54:12 +0000] "POST /api/v1/users/new HTTP/1.1" 400 67
+::1 - - [09/Aug/2022:05:21:19 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 120
+::1 - - [09/Aug/2022:05:22:22 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 64
+::1 - - [09/Aug/2022:05:24:22 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 61
+::1 - - [09/Aug/2022:05:24:49 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 75
+::1 - - [09/Aug/2022:05:25:31 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 75
+::1 - - [09/Aug/2022:05:26:34 +0000] "POST /api/v1/users/new HTTP/1.1" 200 126
+::1 - - [09/Aug/2022:05:27:24 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 75
+::1 - - [09/Aug/2022:05:27:36 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:05:27:42 +0000] "POST /api/v1/tickets/new HTTP/1.1" 400 75
+::1 - - [09/Aug/2022:05:27:48 +0000] "POST /api/v1/tickets/new HTTP/1.1" 200 248
