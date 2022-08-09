@@ -10,12 +10,12 @@ const TicketSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please add a description"],
     },
-    status: {
+    priority: {
         type: String,
         enum: ["low", "medium", "high"],
         default: "low"
     },
-    priority: {
+    status: {
         type: String,
         enum: ["open", "close"],
         default: "open"

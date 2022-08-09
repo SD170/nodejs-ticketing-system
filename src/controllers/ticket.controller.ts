@@ -11,6 +11,7 @@ import ErrorResponse from '../utils/ErrorResponse';
 //  @access     Private: Admin
 export const createTicket = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   const { title, description, assignedTo } = req.body;
+  
   // fetching employee user from username
   if (!assignedTo) {
     return next(new ErrorResponse("Please provide a employee username with assignedTo"));
@@ -40,4 +41,17 @@ export const createTicket = asyncHandler(async (req: Request, res: Response, nex
       data: savedTicket,
     });
 
+});
+
+
+//  @desc       get all tickets
+//  @route      GET /api/v1/tickets
+//  @access     Private
+export const getAllTickets = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+  const allTickets = await TicketModel.find({ ...req.query });
+  res.status(200).json({
+    success: true,
+    message: `Ticket fetched successfully`,
+    data: allTickets
+  });
 });
