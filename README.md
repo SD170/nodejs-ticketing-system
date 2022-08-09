@@ -152,6 +152,7 @@ Our schedule management system backend has the following tech stack.
 ## Miscellaneous
 ##### -> Live at [heroku](http://nodejs-ticketing-system.herokuapp.com/)
 ##### -> Logfile can be found [here](https://github.com/SD170/nodejs-ticketing-system/blob/master/morgan.log)
+##### -> Explained [here](https://bit.ly/3QyWudt)
 ##### -> Postman collection [here](https://github.com/SD170/nodejs-ticketing-system/blob/master/_data/interim.postman_collection.json).
 
 
