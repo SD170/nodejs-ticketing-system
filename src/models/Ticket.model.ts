@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import PRIORITIES from "../utils/prioriyList";
 
 const TicketSchema = new mongoose.Schema({
     title: {
@@ -12,7 +13,7 @@ const TicketSchema = new mongoose.Schema({
     },
     priority: {
         type: String,
-        enum: ["low", "medium", "high"],
+        enum: Object.values(PRIORITIES).map(p=>p.TITLE),
         default: "low"
     },
     status: {

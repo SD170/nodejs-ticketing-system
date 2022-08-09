@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
 import ErrorResponse from "../utils/ErrorResponse";
 import { Request, Response, NextFunction } from 'express';
+import TicketModel from '../models/Ticket.model';
+import asyncHandler from './async';
+import ROLES from "../utils/roleList";
 
 
 export const authenticate = (req: Request, res: Response, next: NextFunction) => {
@@ -34,4 +37,31 @@ export const checkRole = (role: string) => {
         }
     };
 };
+
+export const checkTicketClosingValidity = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+    if (!req.body.ticketID) {
+        next(new ErrorResponse(`Please provide a ticketID`, 400));
+    }
+    const ticket = await TicketModel.findById(req.body.ticketID);
+    if (!ticket) {
+        next(new ErrorResponse(`There's no ticket with this ticketID`, 400));
+    }
+
+    if(ticket?.status === "close"){
+        next(new ErrorResponse(`Ticket is already closed`, 400));
+    }
+
+    // @ts-ignore
+    if (ticket!.assignedTo.toString() !== req.user._id && req.user.role !== ROLES.ADMIN) {
+        next(new ErrorResponse(`You don't have permission to remove this ticket`, 400));
+    }
+
+    if(typeof ticket!.priority === 'string'){
+        req.ticketPriority = ticket!.priority
+    }
+    if(ticket!.assignedTo!._id){
+        req.ticketAssigned = ticket!.assignedTo!._id
+    }
+    next();
+});
 
