@@ -1,0 +1,9 @@
+::1 - - [09/Aug/2022:03:37:20 +0000] "POST /api/v1/users/createUser HTTP/1.1" 404 163
+::1 - - [09/Aug/2022:03:37:36 +0000] "POST /api/v1/users/new HTTP/1.1" 500 872
+::1 - - [09/Aug/2022:03:46:50 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:48:22 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:50:01 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:50:04 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:50:59 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:51:03 +0000] "POST /api/v1/users/new HTTP/1.1" 500 1344
+::1 - - [09/Aug/2022:03:53:21 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128

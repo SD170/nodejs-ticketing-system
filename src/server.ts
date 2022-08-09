@@ -3,11 +3,16 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
 import fs from "fs";
+import connectDB from "./db/connection";
 
 //load env vars
 dotenv.config({path: __dirname+'/../config.env'});
 
+//Connect to database
+connectDB();
 
+//route files
+import userRoutres from "./routes/user.route";
 
 
 const app = express();
@@ -19,6 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+
+
 app.use(morgan('common', {
     stream: fs.createWriteStream('./morgan.log', {flags: 'a'})
 }));
@@ -26,6 +33,13 @@ app.use(morgan('common', {
 if(process.env.NODE_ENV==='development'){   //only when using dev env
     app.use(morgan('dev'));
 }
+
+
+
+//mount routers
+app.use('/api/v1/users',userRoutres);
+
+
 
 const PORT = process.env.PORT || 5000;
 
