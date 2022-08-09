@@ -20,7 +20,7 @@ const async_1 = __importDefault(require("../middlewares/async"));
 exports.welcomeDisplay = (0, async_1.default)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const responseHtml = `
   <h1>All the routes</h1>
-  <h2>Click <a href="https://github.com/SD170/nodejs-ticketing-system/tree/master/README.md">here</a> for endpoints details</h2>
+  <h2>Click <a href="https://github.com/SD170/nodejs-ticketing-system/tree/master/README.md">here</a> for endpoint details</h2>
   <h2>Click <a href="https://github.com/SD170/nodejs-ticketing-system/tree/master/_data/interim.postman_collection.json">here</a> for postman collection</h2>
 
   <ul>

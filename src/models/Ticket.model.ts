@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import PRIORITIES from "../utils/prioriyList";
+import PRIORITIES from "../utils/priorityList";
 
 const TicketSchema = new mongoose.Schema({
     title: {

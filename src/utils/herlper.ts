@@ -1,4 +1,4 @@
-import PRIORITIES from './prioriyList';
+import PRIORITIES from './priorityList';
 export const getHigherPriorityTitles =(priority:string) => {
     const sortedPriorities = Object.values(PRIORITIES).sort((p1, p2) => {
         return p2.PRIORITY - p1.PRIORITY;

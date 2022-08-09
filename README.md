@@ -55,7 +55,7 @@ Otherwise, I'm adding the endpoints with a brief description and `the live links
 ###### Description:
 Creates a user, admin/employee.
 ###### Header:
-_**Authorization**_: **jwt <JWT token of the user>** [returned form `/api/v1/users/new`]
+_**Authorization**_: **jwt < JWT token of the user >** [returned form `/api/v1/users/new`]
 ###### Body:
 _**username**_: Username of the user [Must be unique] [REQUIRED]
 
@@ -69,7 +69,7 @@ _**role**_: Role of the user [options: admin/employee]
 ###### Description:
 Creates a new ticket.
 ###### Header:
-_**Authorization**_: **jwt <JWT token of the user>** [returned form `/api/v1/users/new`]
+_**Authorization**_: **jwt < JWT token of the user >** [returned form `/api/v1/users/new`]
 ###### Body:
 _**title**_: Title of the ticket [Must be unique]  [REQUIRED]
 
@@ -118,7 +118,7 @@ _**priority**_: priority [options: high/medium/low, default: low]
 ###### Description:
 Closes a ticket [`Only if there's no high priority ticket assigned to the employee`]
 ###### Header:
-_**Authorization**_: **jwt <JWT token of the user>** [returned form `/api/v1/users/new`]
+_**Authorization**_: **jwt < JWT token of the user >** [returned form `/api/v1/users/new`]
 ###### Body:
 _**ticketID**_: Id of the ticket [REQUIRED]
 ###### Query-params:
@@ -130,7 +130,7 @@ _**ticketID**_: Id of the ticket [REQUIRED]
 ###### Description:
 Deletes a ticket
 ###### Header:
-_**Authorization**_: **jwt <JWT token of the user>** [returned form `/api/v1/users/new`]
+_**Authorization**_: **jwt < JWT token of the user >** [returned form `/api/v1/users/new`]
 ###### Body:
 _**ticketID**_: Id of the ticket [REQUIRED]
 ###### Query-params:

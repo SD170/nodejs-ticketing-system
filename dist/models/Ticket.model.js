@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
-const prioriyList_1 = __importDefault(require("../utils/prioriyList"));
+const priorityList_1 = __importDefault(require("../utils/priorityList"));
 const TicketSchema = new mongoose_1.default.Schema({
     title: {
         type: String,
@@ -17,7 +17,7 @@ const TicketSchema = new mongoose_1.default.Schema({
     },
     priority: {
         type: String,
-        enum: Object.values(prioriyList_1.default).map(p => p.TITLE),
+        enum: Object.values(priorityList_1.default).map(p => p.TITLE),
         default: "low"
     },
     status: {
