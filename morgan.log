@@ -7,3 +7,4 @@
 ::1 - - [09/Aug/2022:03:50:59 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
 ::1 - - [09/Aug/2022:03:51:03 +0000] "POST /api/v1/users/new HTTP/1.1" 500 1344
 ::1 - - [09/Aug/2022:03:53:21 +0000] "POST /api/v1/users/new HTTP/1.1" 200 128
+::1 - - [09/Aug/2022:03:55:15 +0000] "POST /api/v1/users/new HTTP/1.1" 500 614
